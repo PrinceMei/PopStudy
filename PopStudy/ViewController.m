@@ -23,6 +23,7 @@
     [super viewDidLoad];
 
     [self configureTableView];
+    self.title =@"PopStudy";
 }
 
 
