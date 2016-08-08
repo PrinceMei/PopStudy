@@ -1,9 +1,19 @@
 # PopStudy
 这个学习Demo封装了轮播图、二维码、头部滑动等一些项目里经常用到的动画功能
-##Screenshots
+##部分截图
 ![main](https://github.com/iosyaowei/PopStudy/blob/master/Screenshots/Simulator%20Screen%20Shot%202016年8月8日%20下午6.28.40.png)
 ![tableView的Pop动画](https://github.com/iosyaowei/PopStudy/blob/master/Screenshots/Simulator%20Screen%20Shot%202016年8月8日%20下午6.29.12.png)
 ![二维码](https://github.com/iosyaowei/PopStudy/blob/master/Screenshots/Simulator%20Screen%20Shot%202016年8月8日%20下午6.29.38.png)
 ![头部滑动视图](https://github.com/iosyaowei/PopStudy/blob/master/Screenshots/Simulator%20Screen%20Shot%202016年8月8日%20下午6.29.51.png)
 ![轮播图](https://github.com/iosyaowei/PopStudy/blob/master/Screenshots/Simulator%20Screen%20Shot%202016年8月8日%20下午6.29.58.png)
+##新特性
+- tableView的动画利用Pop框架 实现滑动和点击的特效，并具有拼音模糊搜索功能
+- 二维码功能利用ZXingObjC实现二维码生成和扫描，接口都留出来了集成起来非常方便
+- sliderView 基于scrollView实现头部滑动视图支持文字、文字和图片两种形式，支持自定义样式
+- 轮播图基于collectionView实现,可以添加图片和标题自定义了pageControl的样式，因为时间关系各种该属性接口还没留出来。
 
+##第三方
+- Pop
+- Masonry
+- ZXingObjC
+- LBXScan
