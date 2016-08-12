@@ -2,7 +2,7 @@
 //  NSArray+GroupAndSortByPinyin.h
 //  HXSortByLetters
 //
-//  Created by 韩晓 on 16/4/3.
+//  Created by yaowei on 16/4/3.
 //  Copyright © 2016年 hello. All rights reserved.
 // NSArray分类：给数组按拼音分组并排序
 

@@ -2,7 +2,7 @@
 //  SlideViewController.m
 //  PopStudy
 //
-//  Created by 韩晓 on 16/8/5.
+//  Created by yaowei on 16/8/5.
 //  Copyright © 2016年 juku. All rights reserved.
 //
 

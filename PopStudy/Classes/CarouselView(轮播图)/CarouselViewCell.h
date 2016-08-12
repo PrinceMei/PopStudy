@@ -2,7 +2,7 @@
 //  CarouselViewCell.h
 //  PopStudy
 //
-//  Created by 韩晓 on 16/8/8.
+//  Created by yaowei on 16/8/8.
 //  Copyright © 2016年 juku. All rights reserved.
 //
 

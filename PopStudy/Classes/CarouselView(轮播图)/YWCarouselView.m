@@ -2,7 +2,7 @@
 //  YWCarouselView.m
 //  PopStudy
 //
-//  Created by 韩晓 on 16/8/8.
+//  Created by yaowei on 16/8/8.
 //  Copyright © 2016年 juku. All rights reserved.
 //
 
@@ -10,11 +10,9 @@
 #import "CarouselViewCell.h"
 @interface YWCarouselView()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong)UICollectionView *cv;
-
 @property (nonatomic,strong) UIPageControl *pc;
 @property (nonatomic,strong) UILabel *titleLab;
 @property (nonatomic,strong) NSTimer *timer;
-
 @end
 
 @implementation YWCarouselView
@@ -92,12 +90,12 @@
     NSLog(@"%d",page);
 }
 
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     [self.timer invalidate];
     self.timer =nil;
 }
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     int page = (int)(scrollView.contentOffset.x/kScreenW ) % self.dataArr.count;
     self.pc.currentPage = page;
     [self beginScroll];
