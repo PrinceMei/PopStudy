@@ -278,6 +278,7 @@
 		111DC6841D5D6BC00083B77A /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111DC5731D5D6BC00083B77A /* MenuTableViewController.m */; };
 		111DC6851D5D6BC00083B77A /* searchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111DC5751D5D6BC00083B77A /* searchResultController.m */; };
 		111DC6861D5D6BC00083B77A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 111DC5761D5D6BC00083B77A /* Info.plist */; };
+		115CAF891D758A99008E4A53 /* NavChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115CAF881D758A99008E4A53 /* NavChangeController.m */; };
 		11A3E8BB1D4A2D4200FF680A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 11A3E8BA1D4A2D4200FF680A /* Podfile */; };
 		9F5005D63CF9F900817AD01E /* libPods-PopStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0AFCE62090C47541571F27 /* libPods-PopStudy.a */; };
 /* End PBXBuildFile section */
@@ -816,7 +817,7 @@
 		111DC5571D5D6BC00083B77A /* YWCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWCarouselView.m; sourceTree = "<group>"; };
 		111DC5591D5D6BC00083B77A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		111DC55A1D5D6BC00083B77A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		111DC55B1D5D6BC00083B77A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		111DC55B1D5D6BC00083B77A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Classes/Main(入口)/main.m"; sourceTree = "<group>"; };
 		111DC55C1D5D6BC00083B77A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		111DC55D1D5D6BC00083B77A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		111DC55E1D5D6BC00083B77A /* YWUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWUtil.h; sourceTree = "<group>"; };
@@ -842,6 +843,8 @@
 		111DC5751D5D6BC00083B77A /* searchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchResultController.m; sourceTree = "<group>"; };
 		111DC5761D5D6BC00083B77A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		111DC5771D5D6BC00083B77A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		115CAF871D758A99008E4A53 /* NavChangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavChangeController.h; sourceTree = "<group>"; };
+		115CAF881D758A99008E4A53 /* NavChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavChangeController.m; sourceTree = "<group>"; };
 		11A3E8A01D4A2C4D00FF680A /* PopStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A3E8BA1D4A2D4200FF680A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		473EBA07388FFD092FD116A0 /* Pods-PopStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopStudy/Pods-PopStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -1712,6 +1715,7 @@
 		111DC5501D5D6BC00083B77A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				115CAF861D758A16008E4A53 /* navigationBar(半透明渐变) */,
 				111DC5511D5D6BC00083B77A /* CarouselView(轮播图) */,
 				111DC5581D5D6BC00083B77A /* Main(入口) */,
 				111DC5601D5D6BC00083B77A /* ScanView(二维码) */,
@@ -1739,7 +1743,6 @@
 			children = (
 				111DC5591D5D6BC00083B77A /* AppDelegate.h */,
 				111DC55A1D5D6BC00083B77A /* AppDelegate.m */,
-				111DC55B1D5D6BC00083B77A /* main.m */,
 				111DC55C1D5D6BC00083B77A /* ViewController.h */,
 				111DC55D1D5D6BC00083B77A /* ViewController.m */,
 				111DC55E1D5D6BC00083B77A /* YWUtil.h */,
@@ -1793,12 +1796,22 @@
 			children = (
 				111DC31A1D5D6BC00083B77A /* 3rdParty */,
 				111DC54B1D5D6BC00083B77A /* Assets.xcassets */,
+				111DC55B1D5D6BC00083B77A /* main.m */,
 				111DC5761D5D6BC00083B77A /* Info.plist */,
 				111DC5771D5D6BC00083B77A /* PrefixHeader.pch */,
 				111DC54C1D5D6BC00083B77A /* LaunchScreen.storyboard */,
 				111DC54E1D5D6BC00083B77A /* Main.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		115CAF861D758A16008E4A53 /* navigationBar(半透明渐变) */ = {
+			isa = PBXGroup;
+			children = (
+				115CAF871D758A99008E4A53 /* NavChangeController.h */,
+				115CAF881D758A99008E4A53 /* NavChangeController.m */,
+			);
+			path = "navigationBar(半透明渐变)";
 			sourceTree = "<group>";
 		};
 		11A3E8971D4A2C4D00FF680A = {
@@ -2191,6 +2204,7 @@
 				111DC5C01D5D6BC00083B77A /* ZXVCardResultParser.m in Sources */,
 				111DC6261D5D6BC00083B77A /* ZXCode128Writer.m in Sources */,
 				111DC5E11D5D6BC00083B77A /* ZXByteMatrix.m in Sources */,
+				115CAF891D758A99008E4A53 /* NavChangeController.m in Sources */,
 				111DC57A1D5D6BC00083B77A /* UIImageView+CornerRadius.m in Sources */,
 				111DC6541D5D6BC00083B77A /* ZXPDF417ResultMetadata.m in Sources */,
 				111DC5F31D5D6BC00083B77A /* ZXDataMatrixBase256Encoder.m in Sources */,

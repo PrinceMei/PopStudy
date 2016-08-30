@@ -10,7 +10,7 @@
 #import "MenuTableViewCell.h"
 #import "NSArray+GroupAndSortByPinyin.h"
 #import "searchResultController.h"
-@interface MenuTableViewController ()<UISearchResultsUpdating,UISearchBarDelegate>
+@interface MenuTableViewController ()<UISearchResultsUpdating,UISearchBarDelegate,UIScrollViewDelegate>
 @property (nonatomic,strong) NSArray *items;
 @property (nonatomic,strong) UISearchController *searchController;
 @property (nonatomic,strong) searchResultController *resultContrller;
@@ -26,8 +26,6 @@ static NSString *const KCellIdentifier =@"cellIdentifier";
     [self configureTableView];
     [self configureTitleView];
 }
-
-
 
 - (void)configureSearchBar{
     self.resultContrller = [searchResultController new];
@@ -133,8 +131,8 @@ static NSString *const KCellIdentifier =@"cellIdentifier";
     return arr;
 }
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index;{
+    
     NSLog(@"title = %@,index = %ld",title,index);
-
     
     return index;
 }
@@ -161,9 +159,10 @@ static NSString *const KCellIdentifier =@"cellIdentifier";
     [self.resultContrller.tableVew reloadData];
 }
 
+-(void)dealloc{
 
-
-
+    self.navigationController.delegate = nil;
+}
 
 -(void)hasChinese:(NSString *)str{
     

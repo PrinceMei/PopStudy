@@ -12,6 +12,7 @@
 #import "SubLBXScanViewController.h"
 #import "SlideViewController.h"
 #import "CarouselViewController.h"
+#import "NavChangeController.h"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray *items;
@@ -31,7 +32,8 @@
     self.items = @[@[@"tableView 动画、搜索、索引",[MenuTableViewController class]],
                    @[@"扫描二维码界面",[SubLBXScanViewController class]],
                    @[@"头部滑动栏框架",[SlideViewController class]],
-                   @[@"轮播图模块",[CarouselViewController class]]
+                   @[@"轮播图模块",[CarouselViewController class]],
+                   @[@"NavigationBar渐变",[NavChangeController class]]
                    ];
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"cell"];
