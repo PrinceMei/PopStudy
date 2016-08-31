@@ -16,17 +16,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.delegate =self;
     self.tableView.dataSource =self;
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleSingleLineEtched;
-    self.navBackView=[[[self.navigationController.navigationBar.subviews firstObject] subviews] firstObject];
+    self.navBackView=[self.navigationController.navigationBar.subviews firstObject];
+    
+    UIView *headIV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 200)];
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:headIV.bounds];
+    iv.image =[UIImage imageNamed:@"4"];
+    [headIV addSubview:iv];
+    self.tableView.tableHeaderView =headIV;
+    
+    self.view.backgroundColor =[UIColor greenColor];
+    
+    self.automaticallyAdjustsScrollViewInsets =NO;
+    self.navBackView.alpha = 0;
+    self.navigationController.navigationBar.translucent=YES;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    self.tableView.delegate =self;
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
 
     [super viewWillDisappear:animated];
-    
-    self.navBackView.alpha =0.0;
+    self.tableView.delegate =nil;
+    self.navBackView.alpha =1.0;
+    self.navigationController.navigationBar.barTintColor =nil;
 }
 
 #pragma mark - Table view data source
@@ -50,19 +68,18 @@
 
 #pragma mark - ScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
+    
     NSLog(@"%f",scrollView.contentOffset.y);
     CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY<0) {
-        //这是隐藏整个NavBar
-        //        self.navigationController.navigationBar.alpha = fabs(offsetY)/64.0;
-       self.navBackView.alpha = fabs(offsetY)/64.0;
-        self.navigationController.navigationBar.shadowImage =[UIImage new];
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    if (offsetY>-64) {
+        self.navigationController.hidesBarsOnSwipe =YES;
+        //只隐藏navBar背景，item依然显示
+        self.navBackView.alpha = fabs(offsetY)/64.0;
+//        self.navigationController.navigationBar.shadowImage =[UIImage new];
+//        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         
     }else{
-       self.navBackView.alpha = 0;
-        //        self.navigationController.navigationBar.alpha = 0.0;
+        self.navBackView.alpha = 0;
     }
 }
 
