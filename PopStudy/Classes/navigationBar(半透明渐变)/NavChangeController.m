@@ -79,7 +79,6 @@
     if (offsetY>(self.headerHigh-self.navigationController.navigationBar.bounds.size.height)) {
         //只隐藏navBar背景，item依然显示
         self.navBackView.alpha = (offsetY-(self.headerHigh-self.navigationController.navigationBar.bounds.size.height))/64.0;
-        
     }else{
         self.navBackView.alpha = 0;
     }

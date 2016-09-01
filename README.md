@@ -14,6 +14,7 @@
 - sliderView基于scrollView实现头部滑动视图支持文字、文字和图片两种形式，支持自定义样式
 - 轮播图基于collectionView实现,可以添加图片和标题自定义了pageControl的样式，因为时间关系各种该属性接口还没留出来。
 - 仿qq空间导航栏渐变效果 使用原生的navigationBar,利用scrollView的代理实现导航栏的渐变效果
+
 ##第三方
 - Pop
 - Masonry
