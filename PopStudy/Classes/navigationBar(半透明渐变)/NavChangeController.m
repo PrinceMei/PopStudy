@@ -25,22 +25,21 @@
     iv.image =[UIImage imageNamed:@"4"];
     [headIV addSubview:iv];
     self.tableView.tableHeaderView =headIV;
-    
     self.view.backgroundColor =[UIColor greenColor];
     
     self.automaticallyAdjustsScrollViewInsets =NO;
     self.navBackView.alpha = 0;
     self.navigationController.navigationBar.translucent=YES;
+    //滑动的时候是否隐藏
+    self.navigationController.hidesBarsOnSwipe =NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-
     [super viewWillAppear:animated];
     self.tableView.delegate =self;
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
-
     [super viewWillDisappear:animated];
     self.tableView.delegate =nil;
     self.navBackView.alpha =1.0;
