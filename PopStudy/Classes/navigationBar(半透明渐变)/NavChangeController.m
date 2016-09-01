@@ -10,6 +10,7 @@
 
 @interface NavChangeController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic,strong)UIView *navBackView;
+@property (nonatomic,assign) CGFloat headerHigh;
 @end
 
 @implementation NavChangeController
@@ -19,8 +20,8 @@
     self.tableView.dataSource =self;
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleSingleLineEtched;
     self.navBackView=[self.navigationController.navigationBar.subviews firstObject];
-    
-    UIView *headIV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, 200)];
+    self.headerHigh =200.0;
+    UIView *headIV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenW, self.headerHigh)];
     UIImageView *iv = [[UIImageView alloc]initWithFrame:headIV.bounds];
     iv.image =[UIImage imageNamed:@"4"];
     [headIV addSubview:iv];
@@ -32,6 +33,11 @@
     self.navigationController.navigationBar.translucent=YES;
     //滑动的时候是否隐藏
     self.navigationController.hidesBarsOnSwipe =NO;
+    
+    //去除黑线
+//    self.navigationController.navigationBar.shadowImage =[UIImage new];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -70,12 +76,9 @@
     
     NSLog(@"%f",scrollView.contentOffset.y);
     CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY>-64) {
-        self.navigationController.hidesBarsOnSwipe =YES;
+    if (offsetY>(self.headerHigh-self.navigationController.navigationBar.bounds.size.height)) {
         //只隐藏navBar背景，item依然显示
-        self.navBackView.alpha = fabs(offsetY)/64.0;
-//        self.navigationController.navigationBar.shadowImage =[UIImage new];
-//        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        self.navBackView.alpha = (offsetY-(self.headerHigh-self.navigationController.navigationBar.bounds.size.height))/64.0;
         
     }else{
         self.navBackView.alpha = 0;

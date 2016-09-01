@@ -33,7 +33,7 @@
                    @[@"扫描二维码界面",[SubLBXScanViewController class]],
                    @[@"头部滑动栏框架",[SlideViewController class]],
                    @[@"轮播图模块",[CarouselViewController class]],
-                   @[@"NavigationBar渐变",[NavChangeController class]]
+                   @[@"仿QQ空间导航栏渐变",[NavChangeController class]]
                    ];
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"cell"];
